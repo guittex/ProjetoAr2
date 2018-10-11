@@ -1,0 +1,5 @@
+Design Responsivo o que é?
+
+Design responsivo é desenvolver um site de forma em que os elementos que compôe
+as paginas, eles se ajustem automáticamente a largura da tela do dispositivo do
+usuário, ou seja não você criar varias páginas para varios tipos de dispositivo.
