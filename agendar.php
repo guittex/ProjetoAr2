@@ -16,7 +16,7 @@
         <link href="https://fonts.googleapis.com/css?family=Dosis:300,400,700" rel="stylesheet">
         <link rel="icon" href="img/.png">
     </head>
-<body>
+<body class='fundo'>
  <header class="cabecalho">
  <a href="index.html"><img alt="logo da impacta" src="img/logo4.png"></a>    
             
@@ -53,7 +53,7 @@
                 <input type="cidade" name="cidade" id="cidade" placeholder=" Digite o sua cidade"/></p>   
             
             <p><label for="mensagem">Mensagem:</label>
-                <input type="text" name="mensagem" id="mensagem"  placeholder="Digite uma breve mensagem"/></p>
+                <textarea name="mensagem" id="mensagem"  placeholder="Digite uma breve mensagem"></textarea></p>
 
             <input class="btn-C" type="submit" value="Enviar">
 
@@ -69,8 +69,12 @@
                     <a href="#"><i class="fa fa-instagram"></i></a>
                     <a href="#"><i class="fa fa-envelope"></i></a>
                 </div>
-                <p class="copyright">
-                    Copyright Teen Ar Condicionado 2018. Todos os direitos reservados.</p>
+                <p class="copyright">Copyright Teen Ar Condicionado 2018. Todos os direitos reservados.</p>
+                <p class="foot-nos"><a href="quem-somos.html">Sobre Nós</a></p>
+                <p class="foot-dicas"><a href="dicas.html">Dicas</a></p>
+                <p class="foot-orçamento"><a href="agendar.php">Orçamento</a></p>  
+                <p class="foot-contato"><a href="contato.html">Contato</a></p>
+                <p class="foot-index"><a href="index.html">Home</a></p>   
             </footer>
 			<script src="http://code.jquery.com/jquery-3.3.1.min.js"></script>
         	<script>
