@@ -57,11 +57,17 @@ img{
 
 .menu{
     display: none;
+    float: top;
+    margin-top: 4px;
+    font-size:22px;
+    letter-spacing: 3px;
+    margin-right: -52px;
     width: 100%;
     height: 100%;
     position: fixed;
     background-color: rgba(0,0,0,0.9);
     top: 0;
+    border-radius: 20px;
     left: 0;
 }
 .btn-close{
@@ -74,20 +80,26 @@ img{
 .menu ul{
     width: 100%;
     float: left;
+    margin: 0;
     text-align: center;
+    
 }
 
 .menu li{
     padding: 1.5%;
+    
 }
 
 .menu li a{
-    font-size: 2em; color: #fff;
+    font-size: 1.5em; 
+    color: #fff;
     padding: 1.5% 3%;
+    
 }
 
 .menu li a:hover{
     border: 1px solid #00BFFF;
+    
 }
 /*=====================BANNER========================== */
 
@@ -133,8 +145,8 @@ float: right;
     cursor: pointer;
     padding: 2%;
     border-radius: 10px;
-    background-color: #fff;
-    color: #130400;
+    background-color:#130400;;
+    color: #fff;
 }
 .btn-sobre{
     width: 100%;
@@ -190,7 +202,8 @@ float: right;
 .inner p{
     margin-top: 6%;
     color:#130400;
-    line-height: 1.5em;
+    line-height: 1.7em;
+    font-size: 19px;
 }
 /*=====================NEWSLETTER========================== */
 
@@ -228,9 +241,10 @@ float: right;
     background-color: #fff;
     color: #130400;
     padding: 2%;
-    border-radius: 5px;
+    border-radius: 30px;
     cursor: pointer;
     margin-top: 2%;
+    font-size: 25px;
 }
 
 .rodape{
@@ -290,14 +304,14 @@ float: right;
 }
     
 /*==================LARGE DEVICES - WIDE SCREENS============ */
-@media screen and (min-width: 960px){
+@media screen and (min-width: 1020px){
 .btn-menu{display:none;}
 .btn-close{display:none;}
-.menu{width: auto; height: 56px; line-height: 56px;float: right; background-color: LightGray	; display: block !important;
+.menu{width: auto; height: 56px; line-height: 56px;float: right; background-color: #40E0D0	; display: block !important;
      position: static;}
 .menu li{padding: 0; float: left;}
 .menu li a{color: #130400; font-size: 1em; padding: 15px;}
-.menu li a:hover{border: none; color: #00BFFF;}
+.menu li a:hover{border: none; color: white;}
 }
 
 /*=====================CADASTRO========================== */
@@ -361,6 +375,7 @@ input{
     line-height: 1.5em;
     margin-top: 6%;
     margin-bottom: 3%;
+    font-size: 19px;
     
 }
 /*=====================CONTATO========================== */
@@ -375,6 +390,7 @@ input{
 
 .dicas li {
     line-height: 1.5em;
+    font-size: 19px;
 }
 
 

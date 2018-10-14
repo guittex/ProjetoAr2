@@ -1,4 +1,7 @@
-﻿<!DOCTYPE html>
+﻿<?php
+
+?>
+<!DOCTYPE html>
 <html lang="pt-br">
     <head>
         <meta charset="utf-8">
@@ -16,27 +19,46 @@
 <body>
  <header class="cabecalho">
  <a href="index.html"><img alt="logo da impacta" src="img/logo4.png"></a>    
-           
+            
             <button class="btn-menu"><i class="fa fa-bars fa-lg " aria-hidden="true"></i></button>
             <nav class="menu">
                 <a class="btn-close"><i class="fa fa-times"></i></a>
                 <ul>
-                    <li><a href="index.html">Home</a></li>
-                    <li><a href="login.html">Login</a></li>
-                    <li><a href="dicas.html">Dicas</a></li>
-                    <li><a href="quem-somos.html">Quem Somos</a></li>
-                    <li><a href="agendar.php">Orçamento</a></li>
-                    <li><a href="contato.html">Contato</a></li>
-                    
+                   <li><a href="index.html">Home</a></li>
+                   <li><a href="login.html">Login</a></li>
+                   <li><a href="dicas.html">Dicas</a></li>
+                   <li><a href="quem-somos.html">Quem Somos</a></li>
+                   <li><a href="agendar.php">Orçamento</a></li>
+                   <li><a href="contato.html">Contato</a></li>
                 <ul>
-    	        </nav>
+            </nav>
 
         </header>
 	
-	<h1 class="titulo-C"> Falta finalizar a esta pagina de contato!!!</h1>
+	<h1 class="titulo-C">Solicitação de Orçamento</h1>
 	<div class="C-base">
 		    
+        <form method="POST" action="recebe.php">
+
+            <p><label for="nome">Nome:</label>
+                <input type="text" name="nome" id="nome"  placeholder="Digite seu Nome"/></p>
+
+            <p><label for="email">Email:</label>
+                <input type="email" name="email" id="email" placeholder=" Digite o seu e-mail"/></p>
+
+            <p><label for="telefone">Telefone:</label>
+                <input type="text" name="telefone" id="telefone"  placeholder="Digite seu nº de telefone ou celular"/></p>
+
+            <p><label for="cidade">Cidade:</label>
+                <input type="cidade" name="cidade" id="cidade" placeholder=" Digite o sua cidade"/></p>   
             
+            <p><label for="mensagem">Mensagem:</label>
+                <input type="text" name="mensagem" id="mensagem"  placeholder="Digite uma breve mensagem"/></p>
+
+            <input class="btn-C" type="submit" value="Enviar">
+
+        </form>
+
     </div>
             <!---Rodapé-->
             <footer class="rodape">
