@@ -35,7 +35,7 @@
 
         </header>
 	
-	<h1 class="titulo-C">Solicitação de Orçamento</h1>
+	<h1 class="titulo-obrigado">Solicitação de Orçamento</h1>
 	<div class="C-base">
 		    
         <form method="POST" action="recebe.php">
