@@ -1,7 +1,4 @@
-﻿<?php
-
-?>
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="pt-br">
     <head>
         <meta charset="utf-8">
@@ -16,36 +13,31 @@
         <link href="https://fonts.googleapis.com/css?family=Dosis:300,400,700" rel="stylesheet">
         <link rel="icon" href="img/.png">
     </head>
-<body class='fundo'>
+<body class="fundo3">
         <?php
             include_once("menu.php");
         ?>
             
 	
-	<h1 class="titulo-obrigado">Solicitação de Orçamento</h1>
+	<h1 class="titulo-obrigado">Entrar</h1>
 	<div class="C-base">
 		    
-        <form method="POST" action="recebe.php">
-
-            <p><label for="nome">Nome:</label>
-                <input type="text" name="nome" id="nome"  placeholder="Digite seu Nome"/></p>
-
-            <p><label for="email">Email:</label>
-                <input type="email" name="email" id="email" placeholder=" Digite o seu e-mail"/></p>
-
-            <p><label for="telefone">Telefone:</label>
-                <input type="text" name="telefone" id="telefone"  placeholder="Digite seu nº de telefone ou celular"/></p>
-
-            <p><label for="cidade">Cidade:</label>
-                <input type="cidade" name="cidade" id="cidade" placeholder=" Digite o sua cidade"/></p>   
-            
-            <p><label for="mensagem">Mensagem:</label>
-                <textarea name="mensagem" id="mensagem"  placeholder="Digite uma breve mensagem"></textarea></p>
-
-            <input class="btn-C" type="submit" value="Enviar">
-
-        </form>
-
+            <form method="POST" action="login_adm.php">
+	            <label>Email:</label><input type="text" name="email" id="email"></br>
+	            <label>Senha:</label><input type="password" name="senha" id="senha">
+	            <input class="btn-C" type="submit" name="enviar" placeholder="Seu Cadastro">
+	            
+            </form>
+            <?php
+                if(!empty($_GET['error'])){
+                    if($_GET['error'] == 1){
+                        ?>
+                            <h1 style="color: red">Usuário ou senha estão incorretas!! </h1>
+                        <?php
+                    }
+                }
+            ?>
+    </div>
     </div>
             <?php
                 include_once("footer.php");

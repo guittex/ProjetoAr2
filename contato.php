@@ -1,7 +1,4 @@
-﻿<?php
-
-?>
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="pt-br">
     <head>
         <meta charset="utf-8">
@@ -16,40 +13,23 @@
         <link href="https://fonts.googleapis.com/css?family=Dosis:300,400,700" rel="stylesheet">
         <link rel="icon" href="img/.png">
     </head>
-<body class='fundo'>
+
+<body>
         <?php
-            include_once("menu.php");
+        include_once("menu.php");
         ?>
-            
+        
 	
-	<h1 class="titulo-obrigado">Solicitação de Orçamento</h1>
-	<div class="C-base">
-		    
-        <form method="POST" action="recebe.php">
-
-            <p><label for="nome">Nome:</label>
-                <input type="text" name="nome" id="nome"  placeholder="Digite seu Nome"/></p>
-
-            <p><label for="email">Email:</label>
-                <input type="email" name="email" id="email" placeholder=" Digite o seu e-mail"/></p>
-
-            <p><label for="telefone">Telefone:</label>
-                <input type="text" name="telefone" id="telefone"  placeholder="Digite seu nº de telefone ou celular"/></p>
-
-            <p><label for="cidade">Cidade:</label>
-                <input type="cidade" name="cidade" id="cidade" placeholder=" Digite o sua cidade"/></p>   
-            
-            <p><label for="mensagem">Mensagem:</label>
-                <textarea name="mensagem" id="mensagem"  placeholder="Digite uma breve mensagem"></textarea></p>
-
-            <input class="btn-C" type="submit" value="Enviar">
-
-        </form>
-
-    </div>
+    <h1 class="titulo-contato">Nome: Guilherme Felipe</h1></br>
+    <h1 class="titulo-contato">Whats-App: (11)9999-66352</h1></br>
+    <h1 class="titulo-contato">E-mail: ilherme@gmail.com</h1></br>
+    <h1 class="titulo-contato">Disponibilidade: A consultar</h1></br>
+    <img class="img-contato" src="img/manutencao.png" alt="Manutenção e Instalação">
+	
             <?php
                 include_once("footer.php");
             ?>
+
 			<script src="http://code.jquery.com/jquery-3.3.1.min.js"></script>
         	<script>
             	$(".btn-menu").click(function(){
@@ -59,6 +39,6 @@
             	$(".btn-close").click(function(){
                 	$(".menu").hide();
             	});
-        </script>
+            </script>
 </body>
 </html>

@@ -556,6 +556,18 @@ textarea{
     
 }
 
+#tabela_listar{
+    width: 90%;
+    border: 1px solid black;
+    border-collapse: collapse;
+    
+}
+
+#tabela_listar td{
+    border: 1px solid black;
+    
+}
+
 
 
 

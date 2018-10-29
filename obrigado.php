@@ -1,6 +1,3 @@
-﻿<?php
-
-?>
 <!DOCTYPE html>
 <html lang="pt-br">
     <head>
@@ -16,36 +13,16 @@
         <link href="https://fonts.googleapis.com/css?family=Dosis:300,400,700" rel="stylesheet">
         <link rel="icon" href="img/.png">
     </head>
-<body class='fundo'>
+<body>
         <?php
             include_once("menu.php");
         ?>
             
 	
-	<h1 class="titulo-obrigado">Solicitação de Orçamento</h1>
+	<h1 class="titulo-obrigado"> Obrigado pelo contato, em breve entraremos em contato</h1>
 	<div class="C-base">
 		    
-        <form method="POST" action="recebe.php">
-
-            <p><label for="nome">Nome:</label>
-                <input type="text" name="nome" id="nome"  placeholder="Digite seu Nome"/></p>
-
-            <p><label for="email">Email:</label>
-                <input type="email" name="email" id="email" placeholder=" Digite o seu e-mail"/></p>
-
-            <p><label for="telefone">Telefone:</label>
-                <input type="text" name="telefone" id="telefone"  placeholder="Digite seu nº de telefone ou celular"/></p>
-
-            <p><label for="cidade">Cidade:</label>
-                <input type="cidade" name="cidade" id="cidade" placeholder=" Digite o sua cidade"/></p>   
             
-            <p><label for="mensagem">Mensagem:</label>
-                <textarea name="mensagem" id="mensagem"  placeholder="Digite uma breve mensagem"></textarea></p>
-
-            <input class="btn-C" type="submit" value="Enviar">
-
-        </form>
-
     </div>
             <?php
                 include_once("footer.php");

@@ -8,7 +8,7 @@
 
 	$sql = "INSERT INTO agendar_clientes(nome,email,telefone,cidade,mensagem) VALUES ('$nome','$email','$telefone','$cidade','$mensagem')";
 	$result = mysqli_query($con, $sql);
-	header('Location: obrigado.html');
+	header('Location: obrigado.php');
 	
 	
 	
