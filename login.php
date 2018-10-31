@@ -11,6 +11,7 @@
         <link rel="stylesheet" href="css/style.css">
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
         <link href="https://fonts.googleapis.com/css?family=Dosis:300,400,700" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css?family=Krub" rel="stylesheet">
         <link rel="icon" href="img/.png">
     </head>
 <body class="fundo3">
@@ -22,7 +23,7 @@
 	<h1 class="titulo-obrigado">Entrar</h1>
 	<div class="C-base">
 		    
-            <form method="POST" action="login_adm.php">
+            <form method="POST" action="login_adm_banco.php">
 	            <label>Email:</label><input type="text" name="email" id="email"></br>
 	            <label>Senha:</label><input type="password" name="senha" id="senha">
 	            <input class="btn-C" type="submit" name="enviar" placeholder="Seu Cadastro">

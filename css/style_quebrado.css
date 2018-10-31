@@ -3,12 +3,12 @@
 *{
     margin: 0; 
     padding: 0;
-    font-size: 96%;
+    font-size: 100%;
     border: none;
     outline: none;
     font-weight: 300;
     box-sizing: border-box;
-    font-family: 'Krub', sans-serif;
+    font-family: 'Dosis', sans-serif;
 }
 
 body{
@@ -36,9 +36,9 @@ img{
 }
 
 
-.fundo{
+.PAPdo{
     
-    background-image: url("../img/papel.png");
+    background-image: url("../img/papel4.jpg");
     background-repeat: no-repeat;
     background-position: 30% 45%;
     background-size: cover;
@@ -286,16 +286,75 @@ float: right;
     font-size: 25px;
 }
 
-/*=====================FOOTER========================== */
-.footer a{    
-    color: white;
+.foot-nos{
+    margin-left: -0.5%;
+    margin-bottom: 5%;
     letter-spacing: 2px;
-    margin: 0px 8px 0px;
+    margin-top: -42px;
+    color: rgba(255,255,255,0.7); 
+      
 }
 
-.footer a:hover {
+a:visited {
+    color: rgba(255,255,255,0.7);   ;
+}
+
+.foot-nos a:hover {
     color: black;
 }
+
+.foot-dicas{
+    margin-right: 12%;
+    margin-bottom: 2%;
+    letter-spacing: 2px;
+    margin-top: -83px;
+    color: rgba(255,255,255,0.7); 
+      
+}
+
+.foot-dicas a:hover {
+    color: black;
+}
+
+.foot-orçamento{
+    margin-left: 13.8%;
+    margin-bottom: 2%;
+    letter-spacing: 2px;
+    margin-top: -46px;
+    color: rgba(255,255,255,0.7); 
+      
+}
+
+.foot-orçamento a:hover {
+    color: black;
+}
+
+.foot-contato{
+    margin-right: 22%;
+    margin-bottom: 2%;
+    letter-spacing: 2px;
+    margin-top: -45px;
+    color: rgba(255,255,255,0.7); 
+      
+}
+
+.foot-contato a:hover {
+    color: black;
+}
+
+.foot-index{
+    margin-left: 25.5%;
+    margin-bottom: 2%;
+    letter-spacing: 2px;
+    margin-top: -45px;
+    color: rgba(255,255,255,0.7); 
+      
+}
+
+.foot-index a:hover {
+    color: black;
+}
+
 
 .rodape{
     width: 100%;
@@ -321,7 +380,7 @@ float: right;
 
 
 .copyright{
-    margin-top: 5px;
+    margin-top: 2%;
     color: rgba(255,255,255,0.7);
 }
 
@@ -338,7 +397,7 @@ float: right;
 .newsletter h2{font-size: 2em;}
 .newsletter h3{font-size: 1.5em;}
 .newsletter input{width: 70%; padding: 2%; float:left; margin-right: 1%;}
-.newsletter button{width: 24%; height: 3em; padding: 2%; margin-top: 0;}
+.newsletter button{width: 29%; padding: 2%; margin-top: 0;}
 }
 /*==================SMALL DEVICES - TABLETS============ */
 @media screen and (min-width: 960px){
@@ -384,8 +443,9 @@ float: right;
 
 .C-base{
     background-image: url("img/papel.png");
-    width: 100%;
-    line-height: 2em;
+    width: 112%;
+    line-height: 46px;
+    font-size: 18px;;
     text-align: center;
     margin-top: -30px;    
     
@@ -477,7 +537,7 @@ textarea{
     font-size: 19px;
 }
 
-/*=====================Listar Clientes========================== */
+/*=====================CONTATO========================== */
 
 .titulo-contato{
     width: 70%;
@@ -496,24 +556,19 @@ textarea{
     margin-top: -550px;
     
 }
-/*=====================Listar Clientes============================ */
+
 #tabela_listar{
     width: 90%;
-    border: 1px solid white;
+    border: 1px solid black;
     border-collapse: collapse;
-    font-size: 20px;
     
 }
 
 #tabela_listar td{
-    border-bottom: 1px solid grey;
+    border: 1px solid black;
     
 }
 
-#tabela_listar th{
-    font-weight: bold;
-    
-}
 
 
 

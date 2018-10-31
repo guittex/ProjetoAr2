@@ -1,4 +1,4 @@
-<?php
+﻿<?php
 
 ?>
 <!DOCTYPE html>
@@ -23,10 +23,10 @@
         ?>
             
 	
-	<h1 class="titulo-obrigado">Cadastro</h1>
+	<h1 class="titulo-obrigado">Solicitação de Orçamento</h1>
 	<div class="C-base">
 		    
-        <form method="POST" action="cadastro_adm.php">
+        <form method="POST" action="cadastro_orcamento.php">
 
             <p><label for="nome">Nome:</label>
                 <input type="text" name="nome" id="nome"  placeholder="Digite seu Nome"/></p>
@@ -34,16 +34,20 @@
             <p><label for="email">Email:</label>
                 <input type="email" name="email" id="email" placeholder=" Digite o seu e-mail"/></p>
 
-            <p><label for="telefone">Senha:</label>
-                <input type="password" name="senha" id="senha"  placeholder="Digite sua senha"/></p>
+            <p><label for="telefone">Telefone:</label>
+                <input type="text" name="telefone" id="telefone"  placeholder="Digite seu nº de telefone ou celular"/></p>
 
+            <p><label for="cidade">Cidade:</label>
+                <input type="cidade" name="cidade" id="cidade" placeholder=" Digite o sua cidade"/></p>   
             
+            <p><label for="mensagem">Mensagem:</label>
+                <textarea name="mensagem" id="mensagem"  placeholder="Digite uma breve mensagem"></textarea></p>
+
             <input class="btn-C" type="submit" value="Enviar">
 
         </form>
 
     </div>
-            <!---Rodapé-->
             <?php
                 include_once("footer.php");
             ?>

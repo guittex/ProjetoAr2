@@ -11,6 +11,7 @@
         <link rel="stylesheet" href="css/style.css">
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
         <link href="https://fonts.googleapis.com/css?family=Dosis:300,400,700" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css?family=Krub" rel="stylesheet">
         <link rel="icon" href="img/.png">
     </head>
 
@@ -27,7 +28,7 @@
             </div>
             
             <div class="buttons">
-                <a href="agendar.php"><button class="btn-cadastrar">Peça um orçamento<i class="fa fa-arrow-circle-right"></i></button></a>
+                <a href="orcamento.php"><button class="btn-cadastrar">Peça um orçamento<i class="fa fa-arrow-circle-right"></i></button></a>
                 <a href="quem-somos.php"><button class="btn-sobre">Sobre nós<i class="fa fa-question-circle"></i></button></a>
             </div>
             </div>
@@ -86,7 +87,7 @@
             <section class="newsletter">
                 <h2>Agende uma visita agora</h2>
                 <h3>Orçamento totalmente gratuito</h3>
-                <a href="agendar.php"><button>Agendar</button></a>
+                <a href="orcamento.php"><button>Agendar</button></a>
                 
             </section>
             

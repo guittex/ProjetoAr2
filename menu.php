@@ -14,11 +14,12 @@ session_start();
                 <li><a href="index.php">Home</a></li>
                 <li><a href="dicas.php">Dicas</a></li>
                 <li><a href="quem_somos.php">Quem Somos</a></li>
-                <li><a href="agendar.php">Orçamento</a></li>
+                <li><a href="orcamento.php">Orçamento</a></li>
                 <li><a href="contato.php">Contato</a></li>
                 <?php
                     if(isset($_SESSION["newsession"])) {
-                        ?>
+                        ?>  
+                            <li><a href="listar_clientes.php">Clientes</a></li>
                             <li><a href="logoff.php">Sair</a></li>
                         <?php
                     }
