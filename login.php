@@ -23,8 +23,8 @@
 	<h1 class="titulo-obrigado">Entrar</h1>
 	<div class="C-base">
 		    
-            <form method="POST" action="login_adm_banco.php">
-	            <label>Email:</label><input type="text" name="email" id="email"></br>
+            <form method="POST" action="services/login_adm_banco.php">
+	            <label>Login:</label><input type="text" name="nome" id="nome"></br>
 	            <label>Senha:</label><input type="password" name="senha" id="senha">
 	            <input class="btn-C" type="submit" name="enviar" placeholder="Seu Cadastro">
 	            
@@ -33,7 +33,7 @@
                 if(!empty($_GET['error'])){
                     if($_GET['error'] == 1){
                         ?>
-                            <h1 style="color: red">Usuário ou senha estão incorretas!! </h1>
+                            <h1 style="color: red">USUÁRIO OU SENHA ESTÃO INCORRETAS!! </h1>
                         <?php
                     }
                 }

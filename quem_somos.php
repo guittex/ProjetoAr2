@@ -25,7 +25,7 @@
 	<div class="quemsomos">
 		<h1>Quem somos</h1>
 			<p>O que nós acreditamos
-			na GetFit ser a melhor loja de suplementos alimentares, com os melhores produtos, 
+			na Teen Ar condicinado ser a melhor loja de suplementos alimentares, com os melhores produtos,
 			serviços e atendimento a seus clientes.Buscar a satisfação total de nossos clientes, garantindo 
 			atendimento com excelência profissional e técnica,
 			fornecendo os melhores produtos disponíveis no mercado, aplicar preços justos.</p>

@@ -26,7 +26,7 @@
 	<h1 class="titulo-obrigado">Solicitação de Orçamento</h1>
 	<div class="C-base">
 		    
-        <form method="POST" action="cadastro_orcamento.php">
+        <form method="POST" action="services/cadastro_orcamento.php">
 
             <p><label for="nome">Nome:</label>
                 <input type="text" name="nome" id="nome"  placeholder="Digite seu Nome"/></p>

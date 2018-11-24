@@ -19,19 +19,22 @@
         <?php
             include_once("menu.php");
         ?>
-            
+
+
         <div class="banner">
             <div class="title">
                 <h2>Nosso Objetivo!</h2>
-                <h3>Proporcionar aos nossos clientes o fornecimento de profissionais qualificados 
+                <h3>Proporcionar aos nossos clientes o fornecimento de profissionais qualificados
                     para a execução de serviços de instalações e manutenções correntivas.</h3>
             </div>
-            
+
             <div class="buttons">
                 <a href="orcamento.php"><button class="btn-cadastrar">Peça um orçamento<i class="fa fa-arrow-circle-right"></i></button></a>
                 <a href="quem-somos.php"><button class="btn-sobre">Sobre nós<i class="fa fa-question-circle"></i></button></a>
             </div>
-            </div>
+
+        </div>
+
             <main class="servicos">
                                 
                 <article class="servico">

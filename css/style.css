@@ -91,6 +91,8 @@ img{
     background: linear-gradient(to right,#00BFFF,#00FFFF);
 }
 
+
+
 /*=====================MENU========================== */
 
 .menu{
@@ -286,8 +288,7 @@ float: right;
     font-size: 25px;
 }
 
-/*=====================FOOTER========================== */
-.footer a{    
+.footer a{
     color: white;
     letter-spacing: 2px;
     margin: 0px 8px 0px;
@@ -328,7 +329,7 @@ float: right;
 /*=====================MOBILE FIRT========================== */
 /*==================SMALL DEVICES - SMARTPHONES============ */
 
-@media screen and (min-width: 480px){
+@media screen and (min-width: 100px){
 .logo{width: 214px; background: url(../img/logo4.png) center center/214px no-repeat;}
 .btn{font-size: 2em;}
 }
@@ -408,8 +409,11 @@ input{
     border: 1px solid #00BFFF;
     padding: 3%;
     border-radius: 5px;
-        
+    font-size: 15px;
     
+}
+textarea{
+    font-size: 15px;
 }
 
 #mensagem {
@@ -490,13 +494,11 @@ textarea{
 .img-contato{
     width: 33%;
     border-radius: 25px;
-    margin-bottom: 3%;
-    position: initial;
-    margin-left: 700px;
+    margin-left: 739px;
     margin-top: -550px;
     
 }
-/*=====================Listar Clientes============================ */
+/*=====================Listar Orcamento============================ */
 #tabela_listar{
     width: 90%;
     border: 1px solid white;
@@ -504,6 +506,7 @@ textarea{
     font-size: 20px;
     
 }
+
 
 #tabela_listar td{
     border-bottom: 1px solid grey;
@@ -514,6 +517,28 @@ textarea{
     font-weight: bold;
     
 }
+
+/*=====================Listar Clientes============================ */
+#tabela_listar_clientes{
+    width: 1517px;
+    border: 1px solid white;
+    border-collapse: collapse;
+    font-size: 20px;
+
+}
+
+
+#tabela_listar_clientes td{
+    border-bottom: 1px solid grey;
+
+}
+
+#tabela_listar_clientes th{
+    font-weight: bold;
+
+}
+
+
 
 
 
