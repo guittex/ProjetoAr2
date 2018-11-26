@@ -2,6 +2,7 @@
 include_once("services/conexao.php");
 $result_orcamento = "SELECT * FROM cliente";
 $resultado_orcamento = mysqli_query($con, $result_orcamento);
+
 ?>
 
 
@@ -11,7 +12,7 @@ $resultado_orcamento = mysqli_query($con, $result_orcamento);
 include_once("header.php");
 
 ?>
-<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css">
+<link href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" rel="stylesheet">
 
 <body style="font-size: 24px;">
 
@@ -51,18 +52,22 @@ if (!isset($_SESSION["newsession"])){
 
     </div>
 
-
     <!--Tabela listar cliente-->
     <div class="row" id="tabela_listar_orcamento" STYLE="display: inherit;">
-        <div class="col-md-12">
+        <div class="col-md-12 table-responsive">
             <table class="table">
-                <thead>
+                <thead class="">
                 <tr>
                     <th>Nome</th>
                     <th>Celular</th>
                     <th>Ação</th>
+                    <th><button type=button class='btn btn-xs btn-success' data-toggle=modal data-target='#myModalcad' style='margin: 0px 6px 0px'>Cadastrar</button></th>
                 </tr>
                 </thead>
+
+                <tbody>
+
+                <!--Inicio Loop com pesquisar-->
                 <?php
                 $SendPesqUser = filter_input(INPUT_POST, 'SendPesqUser', FILTER_SANITIZE_STRING);
                 if($SendPesqUser){
@@ -70,32 +75,38 @@ if (!isset($_SESSION["newsession"])){
                     $result_usuario = "SELECT * FROM cliente WHERE nome LIKE '%$nome%'";
                     $resultado_usuario = mysqli_query($con, $result_usuario);
                     while($row_usuario = mysqli_fetch_assoc($resultado_usuario)){
-                        echo "<div>";
-                        echo "Nome: " . $row_usuario['nome'] . "<br>";
-                        echo "E-mail: " . $row_usuario['email'] . "<br>";
-                        echo "Telefone: " . $row_usuario['telefone'] . "<br>";
-                        echo "Cidade: " . $row_usuario['cidade'] . "<br>";
-                        echo "Mensage: " . $row_usuario['mensagem'] . "<br>";
-                        echo "<a href='editar_orcamento.php?id=" . $row_usuario['id'] . "'>Editar</a><br>";
-                        echo "<a href='proc_apagar_usuario.php?id=" . $row_usuario['id'] . "'>Apagar</a><br><hr>";
-                        echo "</div>";
+                        echo "<tr>";
+                        echo "<td>" . $row_usuario['nome'] . "</td>";
+                        echo "<td>" . $row_usuario['telefone'] . "</td>";
+                        echo "<td>";
+                        echo "<button type=button class='btn btn-xs btn-primary' data-toggle=modal data-target='#myModal" . $row_usuario["id"] . "'>Visualizar</button>";
+                        echo "<button type=button class='btn btn-xs btn-warning' data-toggle=modal data-target='#exampleModal' data-whatever=" . $row_usuario['id'] . " data-whatevernome=" . $row_usuario['nome'] . " data-whateveremail=" . $row_usuario['email'] . " data-whatevertelefone="  . $row_usuario['telefone'] . " data-whatevercelular=" . $row_usuario['celular'] . " data-whatevercidade=" . $row_usuario['cidade'] . " data-whateverendereco=" . $row_usuario['endereco'] . " data-whatevernumero=" . $row_usuario['numero'] . " data-whateverobservacao=" . $row_usuario['observacao'] . " style='color: #fff; margin-left: 5px'>Editar</button>";
+                        echo "<button type=button class='btn btn-xs btn-danger' style='margin-left: 5px'> <a href=services/apagar_cliente_banco.php?id=" . $row_usuario['id'] . "  data-confirm='Tem certeza de que deseja excluir o item selecionado?' style='color: inherit'</a> Apagar</button>";
+                        echo "</td>";
+                        echo "</tr>";
                     }
                 }
                 ?>
 
-                <tbody>
+                <!-- Inicio Loop sem pesquisar-->
                 <?php while($rows_orcamento = mysqli_fetch_assoc($resultado_orcamento)){ ?>
-
                     <tr>
-                        <td><?php echo $rows_orcamento['nome']; ?></td>
-                        <td><?php echo $rows_orcamento['celular']; ?></td>
-                        <td>
-                            <button type="button" class="btn btn-xs btn-primary" data-toggle="modal" data-target="#myModal<?php echo $rows_orcamento['id']; ?>">Visualizar</button>
-                            <button type="button" class="btn btn-xs btn-success" data-toggle="modal" data-target="#myModalcad">Cadastrar</button>
-                            <button type="button" class="btn btn-xs btn-warning" data-toggle="modal" data-target="#exampleModal" data-whatever="<?php echo $rows_orcamento['id']; ?>" data-whatevernome="<?php echo $rows_orcamento['nome']; ?>" data-whateveremail="<?php echo $rows_orcamento['email']; ?>" data-whatevertelefone="<?php echo $rows_orcamento['telefone']; ?>" data-whatevercelular="<?php echo $rows_orcamento['celular']; ?>" data-whatevercidade="<?php echo $rows_orcamento['cidade']; ?>" data-whateverendereco="<?php echo $rows_orcamento['endereco']; ?>" data-whatevernumero="<?php echo $rows_orcamento['numero']; ?>" data-whateverobservacao="<?php echo $rows_orcamento['observacao']; ?>" >Editar</button>
-                            <button type="button" class="btn btn-xs btn-danger"> <a href=services/apagar_orcamento_banco.php?id="<?php echo  $rows_orcamento['id'];  ?>"  data-confirm='Tem certeza de que deseja excluir o item selecionado?' style="color: inherit" </a> Apagar</button>
-                        </td>
+                        <?php
+
+                        if(!$SendPesqUser){
+                            echo "<td>" . $rows_orcamento['nome'] . "</td>";
+                            echo "<td>" . $rows_orcamento['telefone'] . "</td>";
+                            echo "<td>";
+                            echo "<button type=button class='btn btn-xs btn-primary' data-toggle=modal data-target='#myModal" . $rows_orcamento["id"] . "'>Visualizar</button>";
+                            echo "<button type=button class='btn btn-xs btn-warning' data-toggle=modal data-target='#exampleModal' data-whatever=" . $rows_orcamento['id'] . " data-whatevernome=" . $rows_orcamento['nome'] . " data-whateveremail=" . $rows_orcamento['email'] . " 'data-whatevertelefone="  . $rows_orcamento['telefone'] . "' data-whatevercelular=" . $rows_orcamento['celular'] . " data-whatevercidade=" . $rows_orcamento['cidade'] . " data-whateverendereco=" . $rows_orcamento['endereco'] . " data-whatevernumero=" . $rows_orcamento['numero'] . " data-whateverobservacao=" . $rows_orcamento['observacao'] . " style='color: #fff; margin-left: 5px;'>Editar</button>";
+                            echo "<button type=button class='btn btn-xs btn-danger' style='margin-left: 5px;'> <a href=services/apagar_cliente_banco.php?id=" . $rows_orcamento['id'] . "  data-confirm='Tem certeza de que deseja excluir o item selecionado?' style='color: inherit;'</a> Apagar</button>";
+                            echo "</td>";
+
+                        }
+                        ?>
                     </tr>
+
+
 
                     <!-- Inicio Modal VISUALIZAR -->
                     <div class="modal fade" id="myModal<?php echo $rows_orcamento['id']; ?>" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
@@ -130,10 +141,6 @@ if (!isset($_SESSION["newsession"])){
 
 
 </div>
-
-
-
-
 
 
 <!-- Inicio Modal CADASTRAR -->
@@ -245,9 +252,6 @@ if (!isset($_SESSION["newsession"])){
     </div>
 </div>
 <!--FIM MODAL EDITAR-->
-
-
-
 
 
 <?php

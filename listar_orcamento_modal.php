@@ -1,6 +1,16 @@
 <?php
 include_once("services/conexao.php");
-$result_orcamento = "SELECT * FROM agendar_clientes";
+
+$pagina_atual = filter_input(INPUT_GET, 'pagina', FILTER_SANITIZE_NUMBER_INT);
+
+$pagina = (!empty($pagina_atual)) ? $pagina_atual : 1;
+
+$quantidade_pagina = 4;
+
+$inicio = ($quantidade_pagina * $pagina) - $quantidade_pagina;
+
+$result_orcamento = "SELECT * FROM agendar_clientes LIMIT $inicio,$quantidade_pagina";
+
 $resultado_orcamento = mysqli_query($con, $result_orcamento);
 ?>
 
@@ -61,39 +71,47 @@ if (!isset($_SESSION["newsession"])){
                     <th>Ação</th>
                 </tr>
                 </thead>
-                <?php
-                $SendPesqUser = filter_input(INPUT_POST, 'SendPesqUser', FILTER_SANITIZE_STRING);
-                if($SendPesqUser){
-                    $nome = filter_input(INPUT_POST, 'nome', FILTER_SANITIZE_STRING);
-                    $result_usuario = "SELECT * FROM agendar_clientes WHERE nome LIKE '%$nome%'";
-                    $resultado_usuario = mysqli_query($con, $result_usuario);
-                    while($row_usuario = mysqli_fetch_assoc($resultado_usuario)){
-                        echo "<div>";
-                        echo "Nome: " . $row_usuario['nome'] . "<br>";
-                        echo "E-mail: " . $row_usuario['email'] . "<br>";
-                        echo "Telefone: " . $row_usuario['telefone'] . "<br>";
-                        echo "Cidade: " . $row_usuario['cidade'] . "<br>";
-                        echo "Mensage: " . $row_usuario['mensagem'] . "<br>";
-                        echo "<a href='editar_orcamento.php?id=" . $row_usuario['id'] . "'>Editar</a><br>";
-                        echo "<a href='proc_apagar_usuario.php?id=" . $row_usuario['id'] . "'>Apagar</a><br><hr>";
-                        echo "</div>";
-                    }
-                }
-                ?>
+
+
 
                 <tbody>
+
+                    <?php
+                    $SendPesqUser = filter_input(INPUT_POST, 'SendPesqUser', FILTER_SANITIZE_STRING);
+                    if($SendPesqUser){
+                        $nome = filter_input(INPUT_POST, 'nome', FILTER_SANITIZE_STRING);
+                        $result_usuario = "SELECT * FROM agendar_clientes WHERE nome LIKE '%$nome%'";
+                        $resultado_usuario = mysqli_query($con, $result_usuario);
+                        while($row_usuario = mysqli_fetch_assoc($resultado_usuario)){
+                            echo "<tr>";
+                            echo "<td>" . $row_usuario['nome'] . "</td>";
+                            echo "<td>" . $row_usuario['telefone'] . "</td>";
+                            echo "<td>";
+                            echo "<button type=button class='btn btn-xs btn-primary' data-toggle=modal data-target='#myModal" . $row_usuario["id"] . "'>Visualizar</button>";
+                            echo "<button type=button class='btn btn-xs btn-danger' style='margin-left: 5px'> <a href=services/apagar_orcamento_banco.php?id=" . $row_usuario['id'] . "  data-confirm='Tem certeza de que deseja excluir o item selecionado?' style='color: inherit'</a> Apagar</button>";
+                            echo "</td>";
+                            echo "</tr>";
+                        }
+
+                    }
+
+                    ?>
                 <?php while($rows_orcamento = mysqli_fetch_assoc($resultado_orcamento)){ ?>
 
-                    <tr>
-                        <td><?php echo $rows_orcamento['nome']; ?></td>
-                        <td><?php echo $rows_orcamento['telefone']; ?></td>
-                        <td>
-                            <button type="button" class="btn btn-xs btn-primary" data-toggle="modal" data-target="#myModal<?php echo $rows_orcamento['id']; ?>">Visualizar</button>
-                            <button type="button" class="btn btn-xs btn-success" data-toggle="modal" data-target="#myModalcad">Cadastrar</button>
-                            <button type="button" class="btn btn-xs btn-warning" data-toggle="modal" data-target="#exampleModal" data-whatever="<?php echo $rows_orcamento['id']; ?>" data-whatevernome="<?php echo $rows_orcamento['nome']; ?>" data-whateveremail="<?php echo $rows_orcamento['email']; ?>" data-whatevertelefone="<?php echo $rows_orcamento['telefone']; ?>" data-whatevercidade="<?php echo $rows_orcamento['cidade']; ?>" data-whatevermensagem="<?php echo $rows_orcamento['mensagem']; ?>" >Editar</button>
-                            <button type="button" class="btn btn-xs btn-danger"> <a href=services/apagar_orcamento_banco.php?id="<?php echo  $rows_orcamento['id'];  ?>"  data-confirm='Tem certeza de que deseja excluir o item selecionado?' style="color: inherit" </a> Apagar</button>
-                        </td>
-                    </tr>
+                <tr>
+                    <?php
+
+                    if(!$SendPesqUser){
+                       echo "<td>" . $rows_orcamento['nome'] . "</td>";
+                       echo "<td>" . $rows_orcamento['telefone'] . "</td>";
+                       echo "<td>";
+                       echo "<button type=button class='btn btn-xs btn-primary' data-toggle=modal data-target='#myModal" . $rows_orcamento["id"] . "'>Visualizar</button>";
+                       echo "<button type=button class='btn btn-xs btn-danger' style='margin-left: 5px;'> <a href=services/apagar_orcamento_banco.php?id=" . $rows_orcamento['id'] . "  data-confirm='Tem certeza de que deseja excluir o item selecionado?' style='color: inherit;'</a> Apagar</button>";
+                       echo "</td>";
+
+                    }
+                    ?>
+                </tr>
 
                     <!-- Inicio Modal VISUALIZAR -->
                     <div class="modal fade" id="myModal<?php echo $rows_orcamento['id']; ?>" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
@@ -119,13 +137,51 @@ if (!isset($_SESSION["newsession"])){
                 <?php } ?>
                 </tbody>
             </table>
+            <?php
+            $result_pg = "SELECT COUNT(id) AS num_result FROM agendar_clientes";
+            $resultado_pg = mysqli_query($con, $result_pg);
+            $row_pag = mysqli_fetch_assoc($resultado_pg);
+            //echo $row_pag['num_result']
+            $qtd_pg = ceil($row_pag['num_result'] / $quantidade_pagina);
+
+            $max_link = 2;
+            echo "<nav>";
+            echo "<ul class='pagination justify-content-center'>";
+
+            echo "<li class='page-item'><a href=listar_orcamento_modal.php?pagina=1 class='page-link'>Primeira </a></li>";
+
+
+            for($pag_ant = $pagina - $max_link; $pag_ant <= $pagina - 1; $pag_ant ++){
+                if($pag_ant >= 1){
+                    echo "<li class='page-item'><a href=listar_orcamento_modal.php?pagina=$pag_ant class='page-link'>$pag_ant </a></li>";
+                }
+            }
+            echo '<li class="page-item active">';
+            echo '<span class="page-link">';
+            echo "$pagina";
+            echo '</span>';
+            echo '</li>';
+
+
+            for($pag_dep = $pagina + 1; $pag_dep <= $pagina + $max_link; $pag_dep++){
+                if($pag_dep <= $qtd_pg){
+                    echo "<li class='page-item'><a href=listar_orcamento_modal.php?pagina=$pag_dep class='page-link'>$pag_dep </a></li>";
+
+                }
+            }
+
+            echo "<li class='page-item'><a href=listar_orcamento_modal.php?pagina=$qtd_pg class='page-link'>Última </a></li>";
+            echo "</ul>";
+            echo "</nav>";
+
+            ?>
+
         </div>
     </div>
 
 
 
 </div>
-
 
 
 

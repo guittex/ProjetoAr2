@@ -7,7 +7,7 @@
         $result = mysqli_query($con, $sql);
 
         if(mysqli_num_rows($result) > 0){
-            header('Location: ../listar_orcamento.php');
+            header('Location: ../listar_orcamento_modal.php');
             session_start();
             /*session is started if you don't write this line can't use $_Session  global variable*/
             $_SESSION["newsession"]=$nome;

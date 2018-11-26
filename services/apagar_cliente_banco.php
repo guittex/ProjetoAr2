@@ -13,7 +13,7 @@ if (!empty($id)){
         echo
 
         "<script>   
-        window.location.href=' ../listar_clientes.php';
+        window.location.href=' ../listar_clientes_modal.php';
         </script>";
 
     }else{
@@ -21,7 +21,7 @@ if (!empty($id)){
         echo
         "<script>
         alert('Erro ao apagar cliente');
-        window.location.href=' ../listar_clientes.php';        
+        window.location.href=' ../listar_clientes_modal.php';        
         </script>";
 
     }
@@ -29,6 +29,6 @@ if (!empty($id)){
     echo
     "<script>
         alert('Necessário selecionar um cliente');
-        window.location.href=' ../listar_clientes.php';
+        window.location.href=' ../listar_clientes_modal.php';
     </script>";
 }

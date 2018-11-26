@@ -17,8 +17,8 @@ session_start();
                         $logado = $_SESSION["newsession"]
                         ?>
                             <li style="color: white;"> <?php echo "Bem vindo $logado";  ?></li>
-                            <li><a href="listar_clientes.php">Clientes</a></li>
-                            <li><a href="listar_orcamento.php">Orçamentos</a></li>
+                            <li><a href="listar_clientes_modal.php">Clientes</a></li>
+                            <li><a href="listar_orcamento_modal.php">Orçamentos</a></li>
                             <li><a href="services/logoff.php">Sair</a></li>
                         <?php
                     }else{ ?>
